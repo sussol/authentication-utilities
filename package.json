@@ -1,0 +1,49 @@
+{
+  "author": {
+    "name": "Sustainable Solutions (NZ) Ltd.",
+    "email": "info@sussol.net"
+  },
+  "name": "authentication-utilities",
+  "main": "lib/index.js",
+  "version": "0.3.0",
+  "license": "proprietary",
+  "description": "Javascript authentication utilities",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sussol/authentication-utilities.git"
+  },
+  "url": "http://github.com/sussol/authentication-utilities",
+  "homepage": "http://sussol.net",
+  "scripts": {
+    "build": "babel --presets stage-0,es2015 src --out-dir lib",
+    "prepublish": "npm run build"
+  },
+  "dependencies": {
+    "base-64": "^0.1.0",
+    "exports-loader": "^0.6.3",
+    "imports-loader": "^0.6.5",
+    "sha256": "^0.2.0",
+    "valid-url": "^1.0.9"
+  },
+  "devDependencies": {
+    "babel-core": "^6.6.5",
+    "babel-eslint": "^6.1.2",
+    "babel-loader": "^6.2.0",
+    "babel-polyfill": "^6.9.1",
+    "babel-preset-es2015": "^6.3.13",
+    "babel-preset-react": "^6.3.13",
+    "babel-preset-stage-0": "^6.3.13",
+    "eslint": "^2.9.0",
+    "eslint-config-airbnb": "^9.0.1",
+    "eslint-plugin-import": "^1.14.0",
+    "eslint-plugin-jsx-a11y": "^1.2.0",
+    "eslint-plugin-react": "^5.2.2",
+    "promise-sync-es6": "0.0.4",
+    "source-map-loader": "^0.1.5",
+    "webpack": "^1.12.14",
+    "whatwg-fetch": "^0.11.0"
+  },
+  "peerDependencies": {
+    "babel-polyfill": "^6.9.1"
+  }
+}
