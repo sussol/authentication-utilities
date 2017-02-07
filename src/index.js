@@ -20,10 +20,6 @@ const {
 * @param  {string}   authURL   The URL to authenticate against
 * @param  {string}   username  The username to test
 * @param  {string}   password  The password to test
-* @param  {function} onSuccess The function to call on successful
-*                              authentication
-* @param  {function} onFailure The function to call if there is an error, with
-*                              the errror message as a parameter
 * @return {object}             JSON formatted response object
 */
 export async function authenticateAsync(authURL, username, password) {
@@ -50,10 +46,18 @@ export async function authenticateAsync(authURL, username, password) {
   return responseJson;
 }
 
+/**
+* Returns a Basic auth header with the given username and password in a Base64 encoded string
+* @param  {string}   username  The username to have in the header
+* @param  {string}   password  The password to have in the header
+*/
 export function getAuthHeader(username, password) {
   return `Basic ${Base64.encode(`${username}:${password}`)}`;
 }
 
+/**
+* Encodes a given password using sha256, producing a non-reversible hash
+*/
 export function hashPassword(password) {
   return sha256(password);
 }
