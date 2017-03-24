@@ -7,7 +7,7 @@
 Exports three utility functions that carry out common authentication tasks
 
 ### authenticateAsync(URL, username, password)
-Checks whether a username and password authenticate against a given URL. 
+Checks whether a username and password authenticate against a given URL.
 Does this by querying the URL endpoint with a Basic auth header attached to the HTTP GET query.
 Will return the response from the server interpreted as JSON, or throw an error if anything goes wrong.
 Errors can be:
@@ -53,7 +53,7 @@ function updateFavouriteColour(newFavouriteColour, username, password) {
 ```
 
 ### hashPassword(password)
-Encodes a given password using sha256, producing a non-reversible hash
+Encodes a given password using sha256 and optional salt, producing a non-reversible hash
 
 ```
 import { hashPassword } from 'authentication-utilities';
@@ -61,12 +61,12 @@ import { hashPassword } from 'authentication-utilities';
 class User {
 
   ...
-  
+
   updatePassword(password) {
-    this.encodedPassword = hashPassword(password); // Only store a non-reversible hash of the password for security
+    this.encodedPassword = hashPassword(password, salt); // Store non-reversible hash of the password for security
   }
-  
+
   ...
-  
+
 }
 ```
