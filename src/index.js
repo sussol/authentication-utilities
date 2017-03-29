@@ -58,6 +58,6 @@ export function getAuthHeader(username, password) {
 /**
 * Encodes a given password using sha256 and optional salt, producing a non-reversible hash
 */
-export function hashPassword(password, salt) {
+export function hashPassword(password, salt = '') {
   return sha256(`${password}${salt}`);
 }
