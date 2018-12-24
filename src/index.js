@@ -20,9 +20,10 @@ const {
 * @param  {string}   authURL   The URL to authenticate against
 * @param  {string}   username  The username to test
 * @param  {string}   password  The password to test
+* @param  {string}   machineUUID The machine UUID to check
 * @return {object}             JSON formatted response object
 */
-export async function authenticateAsync(authURL, username, password) {
+export async function authenticateAsync(authURL, username, password, machineUUID = '') {
   if (!validUrl.isWebUri(authURL)) throw new Error(INVALID_URL);
   if (username.length === 0 || password.length === 0) { // Missing username or password
     throw new Error(MISSING_CREDENTIALS);
@@ -33,6 +34,7 @@ export async function authenticateAsync(authURL, username, password) {
     const response = await fetch(authURL, {
       headers: {
         Authorization: getAuthHeader(username, password),
+        msupply_site_uuid: machineUUID,
       },
     });
     responseJson = await response.json();
