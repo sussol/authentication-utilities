@@ -34,7 +34,7 @@ export async function authenticateAsync(authURL, username, password, machineUUID
     const response = await fetch(authURL, {
       headers: {
         Authorization: getAuthHeader(username, password),
-        msupply_site_uuid: machineUUID,
+        'msupply-site-uuid': machineUUID,
       },
     });
     responseJson = await response.json();
