@@ -20,7 +20,7 @@ const {
 * @param  {string}   authURL   The URL to authenticate against
 * @param  {string}   username  The username to test
 * @param  {string}   password  The password to test
-* @param  {string}   machineUUID The machine UUID to check
+* @param  {string}   machineUUID The machine UUID to check - optional
 * @return {object}             JSON formatted response object
 */
 export async function authenticateAsync(authURL, username, password, machineUUID = '') {
