@@ -20,7 +20,7 @@ const {
 * @param  {string}   authURL   The URL to authenticate against
 * @param  {string}   username  The username to test
 * @param  {string}   password  The password to test
-* @param  {string}   machineUUID The machine UUID to check - optional
+* @param  {object}   extraHeaders Extra headers to add to authentication request
 * @return {object}             JSON formatted response object
 */
 export async function authenticateAsync(authURL, username, password, extraHeaders = {}) {
